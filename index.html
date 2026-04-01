@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisor Partnership | Wiser Financial + Clarity Legal Group</title>
+    <meta name="description" content="A selective partnership for independent financial advisors. Integrate risk-engineered portfolio methodology with coordinated estate planning intelligence. Limited availability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-deep: #060a14;
+            --navy: #0c1220;
+            --navy-light: #131b30;
+            --navy-mid: #1a2440;
+            --gold: #c9a84c;
+            --gold-light: #d4b96a;
+            --gold-pale: rgba(201, 168, 76, 0.08);
+            --teal: #3a9e8f;
+            --teal-light: #4dbba8;
+            --teal-pale: rgba(58, 158, 143, 0.08);
+            --white: #f8f7f4;
+            --white-soft: #dddcd8;
+            --gray: #8b92a0;
+            --gray-light: #5c6370;
+            --divider: rgba(201, 168, 76, 0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy-deep);
+            color: var(--white);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0.9rem 2.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(6, 10, 20, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--divider);
+            transition: all 0.3s ease;
+        }
+        .nav.scrolled { padding: 0.55rem 2.5rem; box-shadow: 0 4px 40px rgba(0,0,0,0.5); }
+        .nav-brands { display: flex; align-items: center; gap: 0.7rem; }
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .nav-brand.w { color: var(--gold); }
+        .nav-brand.c { color: var(--teal); }
+        .nav-sep { color: var(--gray-light); font-weight: 300; font-size: 1.1rem; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-label {
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gray-light);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 0.25rem 0.7rem; border-radius: 2px;
+        }
+        .nav-cta {
+            padding: 0.55rem 1.4rem;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            border: none; cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .nav-cta:hover { background: var(--gold-light); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 7rem 2rem 5rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 30%, rgba(201, 168, 76, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(58, 158, 143, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative; max-width: 780px; text-align: center;
+        }
+        .hero-eyebrow {
+            font-size: 0.62rem; font-weight: 700;
+            letter-spacing: 3.5px; text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        .hero-eyebrow span {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 2px;
+            background: rgba(201, 168, 76, 0.03);
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            font-weight: 600; line-height: 1.15;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 .em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--gold), var(--teal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 1.08rem; color: var(--gray);
+            max-width: 620px; margin: 0 auto 3rem;
+            line-height: 1.9; font-weight: 300;
+        }
+        .hero-cta-wrap { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            padding: 1rem 2.4rem;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-size: 0.78rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            border: none; cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.2); }
+        .btn-ghost {
+            padding: 1rem 2.4rem;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white-soft);
+            font-size: 0.78rem; font-weight: 500;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-ghost:hover { border-color: rgba(201,168,76,0.3); color: var(--gold); }
+        .hero-note {
+            margin-top: 2rem;
+            font-size: 0.72rem; color: var(--gray-light);
+            font-style: italic;
+        }
+
+        /* ── SHARED ── */
+        section { padding: 7rem 2rem; }
+        .container { max-width: 1060px; margin: 0 auto; }
+        .section-eyebrow {
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 3.5px; text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+        .ey-gold { color: var(--gold); }
+        .ey-teal { color: var(--teal); }
+        .ey-dual {
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+            font-weight: 600; line-height: 1.25;
+            margin-bottom: 1.2rem;
+        }
+        .section-lead {
+            font-size: 1rem; color: var(--gray);
+            max-width: 640px; line-height: 1.85;
+            font-weight: 300;
+        }
+        .sep {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--teal), transparent);
+            opacity: 0.12;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* ── THE SHIFT ── */
+        .shift { background: var(--navy); border-top: 1px solid var(--divider); }
+        .shift-columns {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; margin-top: 3.5rem; align-items: start;
+        }
+        .shift-col h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem; font-weight: 600;
+            margin-bottom: 1rem; line-height: 1.3;
+        }
+        .shift-col p {
+            font-size: 0.92rem; color: var(--gray);
+            line-height: 1.8; margin-bottom: 1.2rem;
+        }
+        .shift-col .old { border-left: 2px solid var(--gray-light); padding-left: 1.5rem; }
+        .shift-col .new { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+        .shift-col .old h3 { color: var(--gray); }
+        .shift-col .new h3 { color: var(--gold); }
+        .shift-tag {
+            display: inline-block;
+            font-size: 0.58rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            padding: 0.25rem 0.7rem;
+            border-radius: 2px;
+            margin-bottom: 1.2rem;
+        }
+        .shift-tag.old-tag { background: rgba(255,255,255,0.04); color: var(--gray-light); }
+        .shift-tag.new-tag { background: var(--gold-pale); color: var(--gold); }
+
+        /* ── METHODOLOGY ── */
+        .methodology { background: var(--navy-deep); border-top: 1px solid var(--divider); }
+        .method-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1px; margin-top: 3.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .method-cell {
+            padding: 2.5rem 2rem;
+            background: var(--navy-deep);
+            position: relative;
+        }
+        .method-cell .cell-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem; font-weight: 700;
+            line-height: 1;
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            opacity: 0.04;
+        }
+        .method-cell .cell-tag {
+            font-size: 0.58rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 1rem; display: block;
+        }
+        .method-cell:nth-child(1) .cell-tag,
+        .method-cell:nth-child(2) .cell-tag { color: var(--gold); }
+        .method-cell:nth-child(3) .cell-tag { color: var(--teal); }
+        .method-cell h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; font-weight: 600;
+            margin-bottom: 0.8rem; line-height: 1.3;
+        }
+        .method-cell p {
+            font-size: 0.88rem; color: var(--gray);
+            line-height: 1.75;
+        }
+
+        /* ── WHAT YOU GAIN ── */
+        .gain { background: var(--navy); border-top: 1px solid var(--divider); }
+        .gain-items {
+            margin-top: 3.5rem;
+            display: flex; flex-direction: column;
+            gap: 0;
+        }
+        .gain-item {
+            display: grid; grid-template-columns: 200px 1fr;
+            gap: 2.5rem; align-items: start;
+            padding: 2.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .gain-item:first-child { padding-top: 0; }
+        .gain-item:last-child { border-bottom: none; }
+        .gain-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem; font-weight: 600;
+            color: var(--gold);
+            padding-top: 0.15rem;
+        }
+        .gain-desc {
+            font-size: 0.94rem; color: var(--gray);
+            line-height: 1.8;
+        }
+        .gain-desc strong { color: var(--white-soft); font-weight: 500; }
+
+        /* ── WHO THIS IS FOR ── */
+        .who { background: var(--navy-deep); border-top: 1px solid var(--divider); }
+        .who-split {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 2rem; margin-top: 3.5rem;
+        }
+        .who-card {
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 2px;
+        }
+        .who-card.yes { border-top: 2px solid var(--gold); }
+        .who-card.no { border-top: 2px solid var(--gray-light); }
+        .who-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .who-card.yes h3 { color: var(--gold); }
+        .who-card.no h3 { color: var(--gray); }
+        .who-list { list-style: none; }
+        .who-list li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem; color: var(--white-soft);
+            display: flex; align-items: flex-start; gap: 0.7rem;
+            line-height: 1.6;
+        }
+        .who-list li .mark { flex-shrink: 0; font-size: 0.75rem; margin-top: 0.25rem; }
+        .who-card.yes .mark { color: var(--gold); }
+        .who-card.no .mark { color: var(--gray-light); }
+
+        /* ── THE MODEL ── */
+        .model { background: var(--navy); border-top: 1px solid var(--divider); }
+        .model-flow {
+            display: flex; align-items: stretch;
+            margin-top: 3.5rem; gap: 0;
+            position: relative;
+        }
+        .model-flow::before {
+            content: '';
+            position: absolute; top: 50%;
+            left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            opacity: 0.15;
+        }
+        .model-step {
+            flex: 1;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+        .step-dot {
+            width: 48px; height: 48px;
+            margin: 0 auto 1.2rem;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--navy-deep);
+            position: relative; z-index: 1;
+        }
+        .model-step:nth-child(1) .step-dot { background: var(--gold); }
+        .model-step:nth-child(2) .step-dot { background: var(--gold-light); }
+        .model-step:nth-child(3) .step-dot { background: var(--teal); }
+        .model-step:nth-child(4) .step-dot { background: var(--teal-light); }
+        .model-step h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem; font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .model-step p {
+            font-size: 0.8rem; color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ── QUOTE ── */
+        .quote-section {
+            background: var(--navy-deep);
+            border-top: 1px solid var(--divider);
+            padding: 5rem 2rem;
+        }
+        .quote-inner {
+            max-width: 700px; margin: 0 auto;
+            text-align: center;
+        }
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem; line-height: 1;
+            background: linear-gradient(135deg, var(--gold), var(--teal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; opacity: 0.25;
+            margin-bottom: -1.5rem;
+        }
+        .quote-inner blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; font-weight: 500;
+            font-style: italic; line-height: 1.6;
+            color: var(--white); margin-bottom: 1.2rem;
+        }
+        .quote-inner cite {
+            font-style: normal; font-family: 'Inter', sans-serif;
+            font-size: 0.78rem; color: var(--gray);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── CTA SECTION ── */
+        .cta-section {
+            background: var(--navy);
+            border-top: 1px solid var(--divider);
+            padding: 6rem 2rem;
+        }
+        .cta-wrapper {
+            max-width: 1060px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: start;
+        }
+        .cta-left h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem; font-weight: 600;
+            line-height: 1.2; margin-bottom: 1.2rem;
+        }
+        .cta-left h2 .em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--gold), var(--teal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta-left p {
+            font-size: 0.95rem; color: var(--gray);
+            line-height: 1.85; margin-bottom: 1.5rem;
+        }
+        .cta-what {
+            list-style: none;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding-top: 1.5rem;
+        }
+        .cta-what li {
+            padding: 0.45rem 0;
+            font-size: 0.88rem; color: var(--white-soft);
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .cta-what .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold); flex-shrink: 0;
+        }
+
+        /* ── FORM ── */
+        .cta-form {
+            padding: 2.5rem;
+            background: var(--navy-light);
+            border: 1px solid rgba(201,168,76,0.08);
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--gold), var(--teal)) 1;
+            border-image-slice: 1;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .form-hdr {
+            text-align: center; margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .form-hdr h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .form-hdr p { font-size: 0.72rem; color: var(--gray); }
+        .fg { margin-bottom: 1rem; }
+        .fg label {
+            display: block; font-size: 0.68rem; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase;
+            color: var(--gray); margin-bottom: 0.4rem;
+        }
+        .fg input, .fg select, .fg textarea {
+            width: 100%; padding: 0.8rem 0.9rem;
+            background: var(--navy-deep);
+            border: 1px solid rgba(255,255,255,0.07);
+            color: var(--white);
+            font-family: 'Inter', sans-serif; font-size: 0.88rem;
+            border-radius: 2px;
+            transition: border-color 0.3s ease;
+            appearance: none; -webkit-appearance: none;
+        }
+        .fg select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.9rem center;
+            padding-right: 2.2rem;
+        }
+        .fg textarea {
+            resize: vertical; min-height: 70px;
+            line-height: 1.6;
+        }
+        .fg input:focus, .fg select:focus, .fg textarea:focus {
+            outline: none; border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(201,168,76,0.08);
+        }
+        .fg input::placeholder, .fg textarea::placeholder { color: var(--gray-light); }
+        .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+        .btn-submit {
+            width: 100%; padding: 1rem; margin-top: 0.3rem;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-family: 'Inter', sans-serif; font-size: 0.78rem;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            border: none; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.2); }
+        .form-note {
+            text-align: center; font-size: 0.66rem;
+            color: var(--gray-light); margin-top: 0.8rem; line-height: 1.5;
+        }
+        .form-success {
+            display: none; text-align: center; padding: 3rem 1.5rem;
+        }
+        .form-success.show { display: block; }
+        .form-success .icon {
+            font-size: 2rem; margin-bottom: 1rem;
+        }
+        .form-success h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem; font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .form-success p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid var(--divider);
+            padding: 2.5rem 2rem; text-align: center;
+        }
+        .footer-brands {
+            display: flex; justify-content: center; gap: 0.7rem;
+            align-items: center; margin-bottom: 1rem;
+        }
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .footer-brand.w { color: var(--gold); }
+        .footer-brand.c { color: var(--teal); }
+        .footer-sep { color: var(--gray-light); font-weight: 300; }
+        .footer-legal {
+            font-size: 0.66rem; color: var(--gray-light);
+            max-width: 600px; margin: 0 auto; line-height: 1.6;
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-in {
+            opacity: 0; transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .shift-columns, .who-split, .cta-wrapper { grid-template-columns: 1fr; }
+            .method-grid { grid-template-columns: 1fr; }
+            .model-flow { flex-direction: column; gap: 0; }
+            .model-flow::before { display: none; }
+            .gain-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .fr { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 4.5rem 1.2rem; }
+            .nav { padding: 0.7rem 1rem; }
+            .nav-label { display: none; }
+            .cta-form { padding: 1.8rem 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+    <div class="nav-brands">
+        <span class="nav-brand w">Wiser</span>
+        <span class="nav-sep">+</span>
+        <span class="nav-brand c">Clarity</span>
+    </div>
+    <div class="nav-right">
+        <span class="nav-label">Advisor Partnership</span>
+        <a href="#apply" class="nav-cta">Request a Call</a>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-content fade-in">
+        <div class="hero-eyebrow"><span>By Invitation &middot; Limited Availability</span></div>
+        <h1>Your Clients Deserve a <span class="em">Risk-Engineered</span> Wealth Plan.<br>You Shouldn't Have to Build It Alone.</h1>
+        <p class="hero-sub">
+            We're building a selective network of independent financial advisors who want to offer something the wirehouses can't — a coordinated methodology that fuses portfolio risk engineering with estate planning intelligence. One framework. Two disciplines. Your client relationship.
+        </p>
+        <div class="hero-cta-wrap">
+            <a href="#apply" class="btn-primary">Schedule a Discovery Call</a>
+            <a href="#shift" class="btn-ghost">See the Methodology</a>
+        </div>
+        <p class="hero-note">This is not a referral program. It's an integration model. We work behind your brand, not beside it.</p>
+    </div>
+</section>
+
+<!-- ═══ THE SHIFT ═══ -->
+<section class="shift" id="shift">
+    <div class="container fade-in">
+        <div class="section-eyebrow ey-gold">The Industry Problem</div>
+        <h2 class="section-title">The Advisory Model Was Built<br>for a World That No Longer Exists</h2>
+        <p class="section-lead">
+            The old model separated portfolio management from legal planning — and both from risk engineering. That fragmentation worked when markets were predictable. They aren't anymore.
+        </p>
+        <div class="shift-columns">
+            <div class="shift-col">
+                <div class="old">
+                    <span class="shift-tag old-tag">The Legacy Model</span>
+                    <h3>Siloed, Reactive, Correlation-Dependent</h3>
+                    <p>Most advisory practices still run on a portfolio-only thesis. Allocation models that assume negative stock-bond correlation. Estate plans drafted without knowledge of account structures. Tax strategies that live in spreadsheets, disconnected from legal reality.</p>
+                    <p>When markets moved predictably, this worked. In a regime defined by fiscal dominance, sticky inflation, and broken correlations — it doesn't.</p>
+                </div>
+            </div>
+            <div class="shift-col">
+                <div class="new">
+                    <span class="shift-tag new-tag">The Integrated Model</span>
+                    <h3>Engineered, Coordinated, Structurally Resilient</h3>
+                    <p>Risk engineering starts with mapping structural exposure — counterparty risk, correlation breakdown, fiat currency erosion — and designing around it. Not predicting. Designing.</p>
+                    <p>When that architecture is built in coordination with estate planning attorneys who understand the financial thesis, every trust provision, beneficiary designation, and tax structure works in concert. That's the gap we close.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ METHODOLOGY ═══ -->
+<section class="methodology">
+    <div class="container fade-in">
+        <div class="section-eyebrow ey-dual">The Methodology</div>
+        <h2 class="section-title">Three Disciplines. One Architecture.</h2>
+        <p class="section-lead">
+            This isn't a product. It's a methodology your practice can integrate — one that gives your clients institutional-grade risk engineering and legal coordination without leaving your care.
+        </p>
+        <div class="method-grid">
+            <div class="method-cell">
+                <div class="cell-num">01</div>
+                <span class="cell-tag">Wiser Financial</span>
+                <h3>Portfolio Risk Engineering</h3>
+                <p>Structural allocation design that moves beyond correlation assumptions. We map counterparty exposure, engineer for fiscal dominance scenarios, and position non-traditional asset classes as structural hedges — not speculative bets. Your clients get a portfolio that's designed to survive the environments that break conventional models.</p>
+            </div>
+            <div class="method-cell">
+                <div class="cell-num">02</div>
+                <span class="cell-tag">Wiser Financial</span>
+                <h3>Tax-Aware Implementation</h3>
+                <p>Every allocation decision is filtered through a tax lens. Self-Directed IRAs, Roth conversion strategies, collectible tax rate avoidance — implementation architecture that preserves gains instead of surrendering them. The structure is the strategy.</p>
+            </div>
+            <div class="method-cell">
+                <div class="cell-num">03</div>
+                <span class="cell-tag">Clarity Legal Group</span>
+                <h3>Estate Planning Intelligence</h3>
+                <p>Living trusts, asset protection, beneficiary alignment, Medicaid planning, and powers of attorney — all drafted with full visibility into the financial architecture. Mark O. Costley and the Clarity team don't work in a vacuum. They build legal infrastructure that speaks the same language as the portfolio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ WHAT YOU GAIN ═══ -->
+<section class="gain">
+    <div class="container fade-in">
+        <div class="section-eyebrow ey-gold">The Advisor Advantage</div>
+        <h2 class="section-title">What This Partnership Gives Your Practice</h2>
+        <div class="gain-items">
+            <div class="gain-item">
+                <div class="gain-label">Differentiation</div>
+                <div class="gain-desc"><strong>Offer what the wirehouses and robo-advisors structurally cannot.</strong> Coordinated risk engineering and estate planning intelligence is a value proposition that can't be replicated by algorithms or product platforms. You become the advisor who sees the whole picture.</div>
+            </div>
+            <div class="gain-item">
+                <div class="gain-label">Client Retention</div>
+                <div class="gain-desc"><strong>When both the financial plan and the legal plan are under your roof, clients don't leave.</strong> The switching cost becomes enormous — not because of lock-in, but because of depth. Every account title, trust provision, and tax structure is woven together.</div>
+            </div>
+            <div class="gain-item">
+                <div class="gain-label">Your Relationship</div>
+                <div class="gain-desc"><strong>We work behind your brand.</strong> Your client sees you as the quarterback. Wiser provides the risk engineering methodology and Clarity provides the legal architecture — but the relationship stays yours. Co-branded where you want it. White-labeled where you don't.</div>
+            </div>
+            <div class="gain-item">
+                <div class="gain-label">Revenue Expansion</div>
+                <div class="gain-desc"><strong>Serve the full lifecycle, not just the portfolio sleeve.</strong> Estate planning, asset protection, Medicaid planning, and tax optimization become extensions of your advisory relationship — deepening wallet share and creating recurring engagement touchpoints.</div>
+            </div>
+            <div class="gain-item">
+                <div class="gain-label">Intellectual Capital</div>
+                <div class="gain-desc"><strong>Access research, frameworks, and client-facing tools built by both firms.</strong> From risk-mapping methodologies to interactive client assessments and co-branded marketing assets — you gain a library of intellectual capital that elevates your practice.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ WHO THIS IS FOR ═══ -->
+<section class="who">
+    <div class="container fade-in">
+        <div class="section-eyebrow ey-dual">Fit Criteria</div>
+        <h2 class="section-title">This Isn't for Everyone. By Design.</h2>
+        <p class="section-lead">
+            We're building a small, high-conviction network — not a mass referral program. Here's how to know if this is the right conversation.
+        </p>
+        <div class="who-split">
+            <div class="who-card yes">
+                <h3>This Is Built for You If</h3>
+                <ul class="who-list">
+                    <li><span class="mark">◆</span> You're an independent RIA or advisor who controls your own investment thesis</li>
+                    <li><span class="mark">◆</span> You believe the traditional balanced portfolio model is structurally compromised</li>
+                    <li><span class="mark">◆</span> You serve clients approaching or in retirement with $500K+ in investable assets</li>
+                    <li><span class="mark">◆</span> You want to offer estate planning coordination but don't have a trusted legal partner</li>
+                    <li><span class="mark">◆</span> You value process and methodology over prediction and product</li>
+                </ul>
+            </div>
+            <div class="who-card no">
+                <h3>This Probably Isn't Right If</h3>
+                <ul class="who-list">
+                    <li><span class="mark">—</span> You're satisfied with traditional asset allocation and see no need to evolve</li>
+                    <li><span class="mark">—</span> You prefer transactional referral relationships over integrated collaboration</li>
+                    <li><span class="mark">—</span> You're looking for a product to sell rather than a methodology to adopt</li>
+                    <li><span class="mark">—</span> You're at a wirehouse or broker-dealer with limited autonomy over your book</li>
+                    <li><span class="mark">—</span> You view estate planning as outside your scope of concern</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="model">
+    <div class="container fade-in">
+        <div class="section-eyebrow ey-dual">The Integration Model</div>
+        <h2 class="section-title">How the Partnership Works in Practice</h2>
+        <p class="section-lead">A four-stage integration designed to layer into your existing practice — not replace it.</p>
+        <div class="model-flow">
+            <div class="model-step">
+                <div class="step-dot">1</div>
+                <h4>Discovery Call</h4>
+                <p>A confidential conversation about your practice, your clients, and whether the methodology aligns with your investment philosophy.</p>
+            </div>
+            <div class="model-step">
+                <div class="step-dot">2</div>
+                <h4>Methodology Briefing</h4>
+                <p>A deep-dive into the risk engineering framework and Clarity's coordinated legal model. See exactly how it works with real client scenarios.</p>
+            </div>
+            <div class="model-step">
+                <div class="step-dot">3</div>
+                <h4>Pilot Engagement</h4>
+                <p>Start with a small number of client cases. Experience the coordination firsthand before committing to a broader integration.</p>
+            </div>
+            <div class="model-step">
+                <div class="step-dot">4</div>
+                <h4>Full Integration</h4>
+                <p>Co-branded (or white-labeled) tools, shared client reviews, and ongoing collaboration. Your practice. Our methodology. Their protection.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ QUOTE ═══ -->
+<section class="quote-section">
+    <div class="quote-inner fade-in">
+        <div class="quote-mark">"</div>
+        <blockquote>
+            The advisors who will win the next decade aren't the ones with the best stock picks. They're the ones who can show a client that their money, their legal structure, and their family's future are all pointing in the same direction.
+        </blockquote>
+        <cite>Wiser Financial + Clarity Legal Group</cite>
+    </div>
+</section>
+
+<!-- ═══ CTA / FORM ═══ -->
+<section class="cta-section" id="apply">
+    <div class="cta-wrapper">
+        <div class="cta-left fade-in">
+            <div class="section-eyebrow ey-gold">Next Step</div>
+            <h2>Schedule a Confidential<br><span class="em">Discovery Call</span></h2>
+            <p>
+                This is a conversation, not a pitch. We'll discuss your practice, your client base, and whether the integrated risk engineering + estate planning methodology is the right fit. No obligation. No pressure. Limited availability.
+            </p>
+            <ul class="cta-what">
+                <li><span class="dot"></span> 30-minute confidential call with Marc Becker (Wiser Financial)</li>
+                <li><span class="dot"></span> Overview of the risk engineering methodology</li>
+                <li><span class="dot"></span> How Clarity Legal Group's coordination model works</li>
+                <li><span class="dot"></span> Integration options tailored to your practice</li>
+                <li><span class="dot"></span> No commitment required</li>
+            </ul>
+        </div>
+        <div class="cta-form fade-in">
+            <div class="form-hdr">
+                <h3>Request Your Discovery Call</h3>
+                <p>We review each request personally</p>
+            </div>
+            <form id="advisorForm" onsubmit="handleSubmit(event)">
+                <div class="fr">
+                    <div class="fg">
+                        <label>First Name</label>
+                        <input type="text" id="fName" placeholder="Jane" required>
+                    </div>
+                    <div class="fg">
+                        <label>Last Name</label>
+                        <input type="text" id="lName" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="fg">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="jane@yourfirm.com" required>
+                </div>
+                <div class="fg">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(919) 555-0123" required>
+                </div>
+                <div class="fg">
+                    <label>Firm Name</label>
+                    <input type="text" id="firm" placeholder="Your advisory firm" required>
+                </div>
+                <div class="fr">
+                    <div class="fg">
+                        <label>Approximate AUM</label>
+                        <select id="aum" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="under-25m">Under $25M</option>
+                            <option value="25-50m">$25M – $50M</option>
+                            <option value="50-100m">$50M – $100M</option>
+                            <option value="100-250m">$100M – $250M</option>
+                            <option value="250m+">$250M+</option>
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label>Estate Planning Partner?</label>
+                        <select id="estatePart" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="none">No — I don't have one</option>
+                            <option value="informal">Informal referral relationship</option>
+                            <option value="formal">Yes — formal partnership</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fg">
+                    <label>What interests you most about this partnership?</label>
+                    <textarea id="interest" placeholder="Optional — tell us what caught your attention"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Request My Discovery Call</button>
+            </form>
+            <p class="form-note">Confidential. Shared only with Wiser Financial and Clarity Legal Group leadership.</p>
+            <div class="form-success" id="formSuccess">
+                <div class="icon">✓</div>
+                <h3>Request Received.</h3>
+                <p>A member of the Wiser Financial team will reach out within 48 hours to schedule your confidential discovery call. We look forward to the conversation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="footer-brands">
+        <span class="footer-brand w">Wiser Financial</span>
+        <span class="footer-sep">+</span>
+        <span class="footer-brand c">Clarity Legal Group</span>
+    </div>
+    <div class="footer-legal">
+        This page is intended for licensed financial professionals only. It does not constitute an offer of employment, partnership, or investment advice. All partnerships are subject to mutual due diligence and compliance review. &copy; 2026 Wiser Financial &amp; Clarity Legal Group. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form handler
+    function handleSubmit(e) {
+        e.preventDefault();
+        const data = {
+            firstName: document.getElementById('fName').value,
+            lastName: document.getElementById('lName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            firm: document.getElementById('firm').value,
+            aum: document.getElementById('aum').value,
+            estatePartner: document.getElementById('estatePart').value,
+            interest: document.getElementById('interest').value,
+            source: 'wiser-clarity-advisor-partnership',
+            submittedAt: new Date().toISOString()
+        };
+        console.log('Advisor lead captured:', JSON.stringify(data, null, 2));
+        document.getElementById('advisorForm').style.display = 'none';
+        document.querySelector('.form-hdr').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+
+</body>
+</html>
